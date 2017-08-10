@@ -1,7 +1,7 @@
 from django.conf.urls import url
-from . import views
+from todo.views import TodoClassView
 
 urlpatterns = [
-    url(r'^$', views.TodoView, name="Todo" ),
-    url(r'^testing/',views.testing, name="testing"),
+    url(r'^$', TodoClassView.as_view(), name="TodoClassView" ),
+    # url(r'^testing/',views.testing, name="testing"),
 ]

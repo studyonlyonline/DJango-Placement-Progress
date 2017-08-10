@@ -9,7 +9,7 @@ class Category(models.Model):
 	is_active = models.BooleanField(default=True)
 
 	def __str__(self):
-		return self.name + " " + str(self.is_active)
+		return self.name 
 
 class Question(models.Model):
 	url = models.URLField(null=True, blank=True)
@@ -37,7 +37,7 @@ class Question(models.Model):
 
 class Tags(models.Model):
 	name = models.CharField(max_length=256)
-	referred_count = models.IntegerField(default=0)
+	referred_count = models.IntegerField(default=1)
 	question = models.ManyToManyField('Question')
 	is_active = models.BooleanField(default=True)
 
@@ -45,5 +45,5 @@ class Tags(models.Model):
 		ordering = ['-referred_count']
 
 	def __str__(self):		
-		return self.name + " " + str(self.is_active)
+		return self.name
 
