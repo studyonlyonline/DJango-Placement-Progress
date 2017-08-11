@@ -68,4 +68,19 @@ class TodoClassView(View):
 			print "errors ", form.errors
 		return redirect('TodoClassView')
 
+	
+
+class TestingClassView(View):
+
+	def get(self, request, *args, **kwargs):
+		print "in get"
+		return HttpResponse("get")
+
+	def post(self, request, *args, **kwargs):
+		print "in post"
+		return HttpResponse("post")
+
+	def put(self, request, *args, **kwargs):
+		print "in update"
+		return HttpResponse("put")	
 
